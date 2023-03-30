@@ -1,0 +1,103 @@
+h3 {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+  margin: 2%;
+}
+
+/* 설립목적 */
+.purpose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 5%;
+  background-color: #ecf0f1;
+  padding: 5%;
+}
+
+.purpose ul li {
+  text-align: left;
+  line-height: 2;
+}
+
+/* 임무!! */
+.duty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* background-color: #ecf0f1; */
+  padding: 5%;
+}
+
+.duty ul li {
+  text-align: left;
+  line-height: 2;
+}
+
+/* 연구 범위 및 내용 */
+.research-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #ecf0f1;
+  padding: 5%;
+}
+
+.research-content ul li {
+  text-align: left;
+  line-height: 2;
+}
+
+/* 향후 추진 */
+.object {
+  position: relative;
+}
+
+.object h3 {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.object_1 {
+  position: relative;
+  padding: 2%;
+}
+
+.object_2 {
+  position: relative;
+  padding: 2%;
+}
+
+.object_1 p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.object_2 p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.object_1 ul li {
+  text-align: left;
+  line-height: 2;
+}
+
+.object_2 ul li {
+  text-align: left;
+  line-height: 2;
+}
+
+.member_table {
+  position: relative;
+  background-color: #ecf0f1;
+  height: 500px;
+  text-align: center;
+}

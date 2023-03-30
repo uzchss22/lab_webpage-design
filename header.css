@@ -1,0 +1,129 @@
+* {
+  font-family: Source Sans Pro;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+  /* user-select: none; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar__menu ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar__menu ul li {
+  font-size: 25px;
+
+  padding: 5%;
+  margin: 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #227093;
+  color: white;
+  /* padding: 8px 12px; */
+}
+
+.navbar__logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar__menu li:hover {
+  background-color: #34ace0;
+  /* transform: scale(1.2); 이미 padding이 적용되어 있어 굳이 필요 없음*/
+  transition: 0.3s;
+  /* padding: 8px 12px; */
+  border-radius: 4px;
+}
+
+.navbar__hamberger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  padding: 2%;
+  margin: 1%;
+}
+
+/* hidden logo setting and navbar__menu padding setting*/
+#hidden__logo {
+  display: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+#logo__img {
+  width: 100px;
+  height: 100px;
+  user-select: none;
+}
+
+@media screen and (max-width: 1080px) {
+  h1 {
+    display: none;
+  }
+
+  .navbar__menu ul li {
+    padding: 2%;
+  }
+
+  #hidden__logo {
+    display: flex;
+  }
+
+  #logo__img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 854px) {
+  .navbar {
+    flex-direction: column;
+  }
+  /* 아마도 필요 없을듯...
+    #hidden__logo {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    } */
+
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__hamberger {
+    display: flex;
+  }
+
+  .navbar__hamberger:hover {
+    background-color: #34ace0;
+    /* transform: scale(1.2); 패딩으로 가로세로 비율을 상세하게 지정하려고 주석처리 햇으나 추후 필요시 조정 */
+    padding: 2% 10%;
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+
+  #hidden__logo {
+    display: none;
+  }
+
+  h1 {
+    display: flex;
+    font-size: 25px;
+  }
+}

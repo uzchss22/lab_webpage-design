@@ -1,0 +1,182 @@
+/* 페이지네이션 스타일 */
+slide slide_wrapHome__banner ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 슬라이드 배너 밑에 현재 페이지 위치 */
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  top: calc(12vw + 51%);
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide {
+  /* layout */
+  display: flex;
+  flex-wrap: nowrap;
+  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+  overflow: hidden;
+
+  /* position */
+  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  position: relative;
+
+  /* size */
+  /* height 임의로 추가.. 배경이미지 배율과 맞춰볼 예정 */
+  /* width: 100%;
+  height: 50vh; */
+
+  user-select: none;
+
+  /* margin-bottom: 10%; */
+
+  height: 70vh;
+}
+.slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  /* left: 0px; 만약 오류 안뜨면 지우기*/
+
+  /* size */
+  /* ---size 조정에서 실시간 고전중 ㅠㅠ. 높이에 50vh를 지정하게 되면 넓이가 100%로 지정했음에도 화면상 오른쪽에 여백이 생김. 슬라이드 기능을 구현하기 위해선 넓이를 조절할수도 없는 노릇
+  ps. 60vh로 수정하니 해결... 왜..?--- */
+  width: 100%;
+  height: 60vh;
+  background-repeat: no-repeat;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.15s;
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: 12vw;
+
+  /* size */
+  width: 32px;
+  height: 50px;
+
+  /* style */
+  border-radius: 20%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+}
+.slide_next_button {
+  right: 10px;
+}
+
+/* 위의 코드도 복잡하고 꼬이거나 하는 오류를 방지하기 위해 텍스트 스타일 각자 정의*/
+.slide_item.item1 {
+  background-image: url(./img/slide_logo1.png);
+  background-size: contain;
+  background-position: 50% 0%;
+}
+.slide_item.item2 {
+  background-image: url(./img/slide_logo2.png);
+  background-size: contain;
+  background-position: 50% 0%;
+}
+.slide_item.item3 {
+  background-image: url(./img/slide_logo3.png);
+  background-size: contain;
+  background-position: 50% 0%;
+}
+
+.slide_text {
+  position: absolute;
+  top: calc(12vw + 50%);
+  color: #474787;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #7fb5ff;
+}
+
+/* 이것은 또 무슨 코드지? 내가 실수로 지웟나?  */
+/* .slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.15s;
+} */
+
+/* 모바일 화면에서의 슬라이드 배너 비율 조정 */
+@media screen and (max-width: 854px) {
+  .slide_item {
+    display: flex;
+  }
+
+  .slide_item.item1 {
+    background-image: url(./img/mobile-ver_1.png);
+    margin-left: auto;
+    margin-right: auto;
+    background-position: 50% 0%;
+  }
+
+  .slide_item.item2 {
+    background-image: url(./img/mobile-ver_2.png);
+    margin-left: auto;
+    margin-right: auto;
+    background-position: 50% 0%;
+  }
+
+  .slide_item.item3 {
+    background-image: url(./img/mobile-ver_3.png);
+    margin-left: auto;
+    margin-right: auto;
+    background-position: 50% 0%;
+  }
+
+  .slide_text {
+    top: calc(12vw + 85%);
+  }
+
+  .slide_button {
+    top: calc(12vw + 20%);
+  }
+
+  .slide_pagination {
+    top: calc(12vw + 80%);
+  }
+}
